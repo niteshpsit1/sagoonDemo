@@ -1,0 +1,28 @@
+<div ng-show="loginUser">
+<form name="myForm" ng-submit="addTask(task)" novalidate>
+  <div class="form-group">
+    <label>Enter Task</label>
+    <input type="text" class="form-control" name="task" placeholder="Todo task" ng-model="task.todo" required>
+    <span style="color:red" ng-show="myForm.task.$dirty && myForm.task.$invalid">
+    <span ng-show="myForm.task.$error.required">task todo is required</span>
+  </span>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="myForm.$invalid">Submit</button>
+  <div style="color:green">{{taskInfo}}  </div>
+</form>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Task</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="task in tasks">
+        <td>{{task.name}}</td>
+        <td>{{task.todo}}</td>
+      </tr>
+    </tbody>
+</table>
+<span>{{message}}</span>
+</div>

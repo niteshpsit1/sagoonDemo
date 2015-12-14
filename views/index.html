@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sogoon Demo</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+ 	<script src="js/app.js"></script>
+ 	<script src="js/controller/mainController.js"></script>
+ 	<script src="js/controller/userController.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="mainController" class="container">
+<div>
+	<div class="row">
+	<div ng-hide="loginUser" class="col-lg-2"><a href="#login"><h2>Login</h2></a></div>
+	<div ng-hide="loginUser" class="col-lg-2"><a href="#signup"><h2>SignUp</h2></a></div>
+	<div ng-show="loginUser" class="col-lg-2"><a href="#home"><h2>ToDo list</h2></a></div>
+	<a ng-click="logout()" href="#" class="col-lg-2"><div ng-show="loginUser"><h2>Logout</h2></div></a>
+	</div>
+	<div style="color:red">{{message}}  </div>
+	<div>
+		<div ng-view>
+				
+		</div>
+	</div>
+</div>
+</body>
+</html>

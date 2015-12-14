@@ -1,0 +1,21 @@
+<div ng-hide="loginUser">
+<form name="myForm" ng-submit="login(login)" novalidate>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control" name="email" placeholder="Email" ng-model="login.email" required>
+    <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+	<span ng-show="myForm.email.$error.required">Email is required.</span>
+	<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+	</span>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password" ng-model="login.password" required>
+    <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+		<span ng-show="myForm.password.$error.required">Password is required</span>
+	</span>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="myForm.$invalid">Submit</button>
+  <div style="color:red">{{login.message}}  </div>
+</form>
+</div>
